@@ -183,7 +183,13 @@ var minesweeper = {
     this.gameStateDisplay = document.createTextNode('Loading...');
     document.body.append(this.gameStateDisplay);
 
+    var restartlink = document.createElement('a');
+    restartlink.href = 'javascript:minesweeper.startGame()';
+    restartlink.append(document.createTextNode('Restart'));
+
     document.body.append(table);
+
+    document.body.append(restartlink);
   },
 
   updateGameStateDisplay: function () {
