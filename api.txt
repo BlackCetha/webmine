@@ -1,0 +1,54 @@
+game.js
+=======
+
+globals
+-------
+
+  field: [
+    [
+      {
+        isMine: boolean,
+        htmlText: object,
+        htmlButton: object,
+        neighborMines: number,
+        marked: boolean
+      }
+    ]
+  ]
+    two-dimensional array representation of the board
+    width and height are equal to game difficulty
+    sub-arrays for each line that holds objects for each tile
+  difficulty
+    game difficulty
+  gameState
+    Numeric representation of the game state
+    0 Uninitialized
+    1 Waiting for first move
+    2 Live
+    3 Over
+  gameStateDisplay
+    Reference to the HTML text element
+  checkMask
+    array of coordinates to ease reaching adjacent tiles
+  startTime
+    Date object indicating when the game started
+
+functions
+---------
+
+  startGame (number difficulty) => null
+    Resets everything and starts a game with the specified difficulty
+    Default difficulty is 10
+
+  clickTile (object buttonReference) => null
+    Reveals a tile or explodes the mine, ending the game
+    Takes care of updating the HTML button and game state
+
+  drawBoard () => null
+    Renders HTML to the page
+
+  updateGameStateDisplay () => null
+    Updates the game state display text
+
+  revealEmptyTiles (xcoord, ycoord) => null
+    Auto-reveal empty adjacent tiles
